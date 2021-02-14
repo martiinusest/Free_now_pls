@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour {
 	public int coins;
 	// Start is called on the frame when a script is enabled just before any of the Update methods is called the first time.
 	protected void Start() {
-		
+		Abilities.doubleJumpEnabled = true;
 	}
 
 	// OnTriggerEnter is called when the Collider "collided" enters the trigger.

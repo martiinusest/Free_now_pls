@@ -6,11 +6,13 @@ public class GameScript : MonoBehaviour {
 	public Transform level2enemies;
 	private bool level2complete = false;
 	public GameObject level2rewards;
+	public EnemySpawner enemySpawn;
 
 
 	// Use this for initialization
 	protected void Start () {
 		level2rewards.SetActive(false);
+		EnemySpawner.activated = false;
 	}
 
 	// Update is called once per frame
@@ -23,5 +25,18 @@ public class GameScript : MonoBehaviour {
 			level2rewards.SetActive(true);
 		}
 
+		if (enemySpawn.transform.childCount == 0 && EnemySpawner.activated)
+        {
+			spawnWave();
+		}
 	}
+
+	public void spawnWave()
+    {
+		for (int i = 0; i < 4; i++)
+        {
+			enemySpawn.Spawn();
+		}
+
+    }
 }
