@@ -2337,10 +2337,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363419e9ee3d68a4ea8743eef2d4402d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedLimit: 100
-  acceleration: 75
-  deceleration: 5
-  rotateSpeed: 50
+  speedLimit: 60
+  acceleration: 60
+  deceleration: 15
+  rotateSpeed: 30
   attackDmg: 2
   pushForce: 40
   pushHeight: 2
@@ -2348,8 +2348,8 @@ MonoBehaviour:
   bounceSound: {fileID: 8300000, guid: f3bfc25b0f3bf4c15b54d173c296703f, type: 3}
   chase: 1
   ignoreY: 1
-  chaseStopDistance: 50
-  seekStopDistance: 50
+  chaseStopDistance: 0.01
+  seekStopDistance: 20
   animatorController: {fileID: 0}
   moveToPointsScript: {fileID: 0}
   m_delayBetweenShots: 1

@@ -7,12 +7,16 @@ public class GameScript : MonoBehaviour {
 	private bool level2complete = false;
 	public GameObject level2rewards;
 	public EnemySpawner enemySpawn;
+	public int espawns;
+	public int waweCount;
+	public int wawestowin;
 
 
-	// Use this for initialization
-	protected void Start () {
+    // Use this for initialization
+    protected void Start () {
 		level2rewards.SetActive(false);
 		EnemySpawner.activated = false;
+		espawns = waweCount * 4;
 	}
 
 	// Update is called once per frame
@@ -27,13 +31,20 @@ public class GameScript : MonoBehaviour {
 
 		if (enemySpawn.transform.childCount == 0 && EnemySpawner.activated)
         {
+			if (waweCount > wawestowin)
+            {
+				enemySpawn.gameObject.SetActive(false);
+            }
+			waweCount++;
+			espawns = waweCount * 1;
 			spawnWave();
+			HUD.Message("Wave" + " " + waweCount);
 		}
 	}
 
 	public void spawnWave()
     {
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < espawns; i++)
         {
 			enemySpawn.Spawn();
 		}
